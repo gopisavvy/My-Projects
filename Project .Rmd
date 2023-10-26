@@ -1,0 +1,268 @@
+---
+title: 'Project # 1 Venkata Gopinag Challa'
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+## 5.1
+x<-1
+print(x)
+msg <-"hello"
+print(msg)
+```
+
+```{r}
+#5.2
+x <- 22 ## nothing printed
+x ## auto-printing occurs
+print(x)## explicit printing
+```
+
+```{r}
+#5.3
+x <- 0:10
+x
+
+```
+
+```{r}
+## 5.6 Creating Vectors 
+x <- c(1.1, 3.4) ## numeric
+x
+x <- c(TRUE, FALSE) ## logical
+x
+x <- c(T, F) ## logical
+x
+x <- c("a", "b", "c") ## character
+x
+x <- 0:10 ## integer
+x
+x <- c(1+0i, 2+4i) ## complex
+x
+```
+
+```{r}
+##vector() function to initialize vectors.
+x <- vector("numeric", length = 10)
+x
+```
+
+```{r}
+##Mixing Objects 5.7
+y <- c(2.2, "a") ## character
+y
+y <- c(TRUE, 1) ## numeric
+y
+y <- c("a", TRUE) ## character
+y
+```
+
+```{r}
+##5.8 Explicit Coercion
+x <- 0:10
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+```
+
+```{r}
+##Getting NA as a result in R
+x <- c("a", "b", "c")
+as.numeric(x)
+as.logical(x)
+as.complex(x)
+```
+
+```{r}
+####5.9 Matrices 
+m <- matrix(nrow = 3, ncol = 4)
+m
+dim(m)
+attributes(m)
+```
+
+```{r}
+a = "Column-Wise"
+a
+m <- matrix(1:12, nrow = 3, ncol = 4)
+m
+a = "adding a dimesion"
+a
+m <- 1:6
+dim(m) <- c(2, 3)
+m
+a = "Row Binding"
+a
+x <- 1:6
+y <- 10:15
+cbind(x, y)
+rbind(x,y)
+```
+
+```{r}
+## 5.10 Lists 
+x <- list(1, "a", TRUE, 1 + 4i)
+x
+a = 'Vector list'
+a
+x <- vector('list', length = 5)
+x
+```
+
+```{r}
+## 5.11 Factors 
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x
+table(x)
+x
+
+```
+
+```{r}
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x ## Levels are put in alphabetical order
+x <- factor(c("yes", "yes", "no", "yes", "no"), levels = c("yes", "no"))
+x
+```
+
+```{r}
+##5.12 Missing Values
+## Create a vector with NAs in it
+x <- c(1, 2, NA, 10, 3)
+## Return a logical vector indicating which elements are NA
+is.na(x)
+## Return a logical vector indicating which elements are NaN
+is.nan(x)
+## Now create a vector with both NA and NaN values
+x <- c(1, 2, NaN, NA, 4)
+is.na(x)
+is.nan(x)
+```
+
+```{r}
+## 5.13 Data Frames 
+x <- data.frame(s.no = 1:4, attribute = c(T, T, F, F))
+x
+nrow(x)
+ncol(x)
+```
+
+```{r}
+## 5.14 Names 
+x <- 1:3
+names(x)
+names(x) <- c("New York", "Seattle", "Los Angeles")
+x
+names(x)
+## list also have names 
+x <- list("Los Angeles" = 1, Boston = 2, London = 3)
+x
+names(x)
+## matrices can have both columns and names 
+m <- matrix(1:4, nrow = 2, ncol = 2)
+dimnames(m) <- list(c("a", "b"), c("c", "d"))
+m
+## Columns names and row names can be separate 
+colnames(m) <- c("h", "f")
+rownames(m) <- c("x", "z")
+m
+```
+
+```{r}
+### Question 2
+```
+
+```{r}
+## Basic Arithmetic operation
+5 + 1 # => 6
+5 - 1 # => 4
+5 / 1 # => 5
+5 * 1 # => 5
+```
+
+```{r}
+##Basic arithmetic functions
+log2(4) # => 2
+abs(-4) # => 4
+sqrt(9) # => 3
+```
+
+```{r}
+##Assigning values to variables:
+apple_price <- 2
+apple_price
+##Basic data types: numeric, character and logical
+my_age <- 28 # Numeric variable
+my_name <- "Gopi" # Character variable
+#  Are you a data scientist?: (yes/no) <=> (TRUE/FALSE)
+is_datascientist <- TRUE # logical variable
+my_age
+my_name
+is_datascientist
+```
+
+```{r}
+##Vectors: a combination of multiple values (numeric, char
+# Create a numeric vector
+friend_ages <- c(24, 26, 28, 22)
+mean(friend_ages) # => 25
+max(friend_ages) # => 28
+
+
+```
+
+```{r}
+##Factors: grouping variables in your data
+# Create a factor
+friend_groups <- factor(c("group a", "group b", "group a", "group b"))
+levels(friend_groups) # => "group a", "group b"
+# Compute the mean age by groups
+friend_ages <- c(24, 26, 28, 22)
+tapply(friend_ages, friend_groups, mean)
+```
+
+```{r}
+##Lists: collection of objects, which can be vectors, matrices, data frames,
+my_family <- list(
+  mother = "Rama", 
+  father = "Seetha",
+  brothers = c("Lava", "Kusa"),
+  brothers_age = c(12, 22)
+  )
+# Print
+my_family
+```
+
+```{r}
+##Creating data frame from the exercise 
+Name <- c("Ravi", "Gopi", "Dave", "Lee")
+Age <- c(28, 26, 24, 22)
+Height = c(180, 170, 185, 165)
+Married = c("True", "False", "True","True")
+
+df <- data.frame(Name, Age, Height, Married)
+
+print (df)
+```
+
+
+
+```{r}
+rownames = c("row1", "row2", "row3", "row4", "row5")
+colnames = c("col1", "col2", "col3")
+M = matrix( 
+   c(5, 6, 7, 8, 9, 2, 4, 5, 9, 8, 7, 3, 4, 8, 7), 
+   nrow=5, 
+   ncol=3,
+   dimnames = list(rownames, colnames)
+   ) 
+print (M)
+```
+
+```{r}
+
+```
+

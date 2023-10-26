@@ -1,0 +1,63 @@
+---
+title: "Project-1"
+output:
+  html_document:
+    df_print: paged
+---
+```{r}
+x=3
+y=4
+#I am adding the above two variables
+addition =x+y
+#print(addition)
+2+33
+substration=y-x
+print(substration)
+multiplication=x*y
+print(multiplication)
+division=y/x
+print(division)
+```
+```{r}
+a<-1:10
+a
+```
+```{r}
+a<-1:100
+#print(numbers)
+print(a[101])
+```
+```{r}
+a = "hi"
+b = "hello"
+paste("1 2","how")
+
+```
+```{r}
+a<-1:100
+class(a)
+as.numeric(a)
+as.logical(a)
+as.character(a)
+```
+```{r}
+x<-c("1","2","3","4")
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+```
+```{r}
+x<-c("a","b","c","d")
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+as.complex(x)
+```
+```{r}
+plot(cars)
+```
+
+
+
